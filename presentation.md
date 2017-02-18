@@ -126,9 +126,12 @@ How to compile code for the Cortex M0 with Clang from the command line on Linux?
 
 ```
 clang -target arm-v6m-unknown-none-eabi \
-      -ccc-gcc-name arm-none-eabi-gcc \
-      -mcpu=cortex-m0 -mfloat-abi=soft \
-      -mthumb -fshort-enums -specs=nosys.specs blinky.c
+  -ccc-gcc-name arm-none-eabi-gcc \
+  -mcpu=cortex-m0 -mfloat-abi=soft \
+  -mthumb -fshort-enums -specs=nosys.specs \
+  -I/usr/include/newlib/c++/4.9.3 \
+  -I/usr/include/newlib/c++/4.9.3/arm-none-eabi/armv6-m\
+  blinky.c
 ```
 
 ---
